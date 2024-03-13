@@ -1,0 +1,160 @@
+    1  sudo apt update
+    2  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+    3  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+    4  gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+    5  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+    6  https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    7  sudo apt update
+    8  sudo apt-get install terraform
+    9  terraform -help
+   10  terraform -install-autocomplete
+   11  exit
+   12  ls
+   13  ll
+   14  terraform -help
+   15  exit
+   16  ls
+   17  vim main.tf
+   18  export TF_LOG=TRACE
+   19  terraform init
+   20  ll
+   21  cat .terraform.lock.hcl 
+   22  cd .terraform
+   23  ls
+   24  cd providers/
+   25  ls
+   26  cd registry.terraform.io/
+   27  ls
+   28  cd hashicorp/
+   29  ls
+   30  cd aws/
+   31  ls
+   32  cd 3.7.0/
+   33  ls
+   34  cd linux_amd64/
+   35  ls
+   36  cat terraform-provider-aws_v3.7.0_x5 
+   37  cd ~
+   38  exit
+   39  ls
+   40  history
+   41  vim main2.tf
+   42  ls
+   43  rm main.tf 
+   44  terraform init
+   45  terraform plan
+   46  terraform apply --auto-approve
+   47  ls
+   48  cat status.txt 
+   49  cat terraform.tfstate 
+   50  terraform destroy --auto-approve
+   51  cat status.txt 
+   52  ls
+   53  cat terraform.tfstate 
+   54  cat terraform.tfstate.backup 
+   55  exit
+   56  history
+   57  exit
+   58  sudo apt update
+   59  aws 
+   60  sudo apt install awscli
+   61  aws --help
+   62  aws help
+   63  sudo apt install docker.io
+   64  sudo groupadd docker
+   65  sudo usermod -aG docker $USER
+   66  exit
+   67  ls
+   68  mkdir lab1
+   69  cd lab1/
+   70  vim backend.tf
+   71  vim main.tf
+   72  vim variables.tf
+   73  ll
+   74  export AWS_ACCESS_KEY_ID=AKIAXYKJUATXH3KM6KHG
+   75  export AWS_SECRET_ACCESS_KEY=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
+   76  export AWS_DEFAULT_REGION=us-east-1
+   77  aws s3 ls
+   78  aws s3 mb s3://miki_bucket_100
+   79  aws s3 mb s3://miki_bucket_10021
+   80  aws s3 mb s3://miki1421 --region us-east-1
+   81  aws s3 ls
+   82  ls
+   83  clear
+   84  cat backend.tf 
+   85  aws s3 ls
+   86  vim backend.tf 
+   87  clear
+   88  cat main.tf 
+   89  terraform init
+   90  vim main.tf 
+   91  vim backend.tf 
+   92  terraform init
+   93  terraform plan
+   94  vim main.tf 
+   95  terraform plan
+   96  vim main.tf 
+   97  terraform plan
+   98  cat main.tf 
+   99  vim main.tf 
+  100  terraform init
+  101  terraform plan
+  102  vim main.tf 
+  103  terraform plan
+  104  ls
+  105  terraform apply 
+  106  exit
+  107  cd lab1/
+  108  ls
+  109  cat main.tf 
+  110  cat backend.tf 
+  111  ls
+  112  terraform console
+  113  exit
+  114  terraform console
+  115  exit
+  116  ls
+  117  cd lab1/
+  118  ls
+  119  cat backend.tf 
+  120  exit
+  121  terraform workspace list
+  122  terraform workspace new mikiop
+  123  ls
+  124  terraform workspace list
+  125  ls
+  126  mkdir lab2
+  127  cd lab2/
+  128  ls
+  129  terraform workspace list
+  130  vim network.tf
+  131  clear
+  132  cat network.tf 
+  133  aws
+  134  aws configure
+  135  aws s3 ls
+  136  vim main.tf
+  137  ls
+  138  terraform workspace new miki-space
+  139  terraform workspace list
+  140  terraform init
+  141  terraform apply --auto-approve
+  142  ls
+  143  ll
+  144  ls
+  145  terraform state list
+  146  ls
+  147  terraform workspace select default
+  148  vim main.tf 
+  149  terraform apply --auto-approve
+  150  vim main.tf 
+  151  terraform apply --auto-approve
+  152  ls
+  153  cd terraform.tfstate.d/
+  154  ls
+  155  exit
+  156  terraform apply --help
+  157  exit
+  158  sudo -i
+  159  ls
+  160  history > hist.txt
